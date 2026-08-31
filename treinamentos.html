@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha de Desenvolvimento - On Time Log</title>
+    <link rel="icon" href="logo-topo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="sp-header">
+        <div class="logo-title">
+            <img src="logo-topo.png" alt="On Time Log Logo" class="logo">
+            <h2 class="site-title">Conecta</h2>
+        </div>
+    </header>
+
+    <nav class="sp-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="treinamentos.html" class="active">Trilha de Desenvolvimento</a></li>
+            <li><a href="agenda.html">Agenda & Ações</a></li>
+            <li><a href="comunicacao.html" target="_blank">Comunicação & Formulários</a></li>
+        </ul>
+    </nav>
+
+    <main class="sp-main catalog-main">
+        <div class="catalog-header">
+            <h2>Trilha de Desenvolvimento</h2>
+            <p>Desenvolva novas habilidades e impulsione sua carreira na On Time Log.</p>
+        </div>
+
+        <div class="course-grid">
+            <div class="course-card" onclick="openModal('excel')">
+                <span class="badge badge-active">Turmas Abertas</span>
+                <div class="course-icon"><img src="logo-excel.png" alt="Excel"></div>
+                <h3>Excel</h3>
+                <p>Nível Básico ao Avançado</p>
+            </div>
+
+            <div class="course-card" onclick="openModal('powerbi')">
+                <span class="badge badge-soon">Em Breve</span>
+                <div class="course-icon"><img src="logo-powerbi.png" alt="Power BI"></div>
+                <h3>Power BI</h3>
+                <p>Análise de Dados</p>
+            </div>
+
+            <div class="course-card" onclick="openModal('seguranca')">
+                <span class="badge badge-soon">Em Breve</span>
+                <div class="course-icon"><img src="logo-seguranca.png" alt="Segurança da Informação"></div>
+                <h3>Segurança da Informação</h3>
+                <p>Boas práticas e Compliance</p>
+            </div>
+        </div>
+
+        <section class="section-header" style="margin-top: 80px;">
+            <h2>Programa de Engajamento</h2>
+            <p>Valorizamos a inovação e quem faz a diferença no nosso dia a dia.</p>
+        </section>
+
+        <div class="recognition-banner">
+            <div class="recognition-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="recognition-content">
+                <h3>Ideias que Transformam</h3>
+                <p>Se você tem uma ideia inovadora para <strong>otimizar os processos no dia a dia</strong>, compartilhe com a gente!</p>
+                <p>As ideias que cumprirem os requisitos propostos renderão ao idealizador uma <strong>premiação surpresa</strong> muito especial como forma de reconhecimento.</p>
+                
+                <!-- BOTÃO INTERATIVO QUE ABRE OS REQUISITOS -->
+                <button type="button" class="btn-recognition" onclick="openIdeaModal()">Ver Requisitos <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MODAL DOS TREINAMENTOS -->
+    <div id="courseModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <img id="modalLogo" src="" alt="Logo do Curso">
+                <h3 id="modalTitle">Título do Curso</h3>
+            </div>
+            <div class="modal-body" id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- NOVO MODAL: REQUISITOS DO PROGRAMA DE ENGAJAMENTO -->
+    <div id="ideaModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closeIdeaModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="recognition-icon" style="width: 45px; height: 45px; font-size: 20px; margin-right: 15px; box-shadow: none;"><i class="fas fa-list-check"></i></div>
+                <h3 style="margin: 0;">Requisitos do Programa</h3>
+            </div>
+            <div class="modal-body">
+                <p>Para que sua ideia seja elegível à nossa <strong>premiação surpresa</strong>, ela precisa atender aos três critérios fundamentais abaixo:</p>
+                <ul>
+                    <li><strong>Foco em Automação e Melhoria:</strong> A ideia deve ser estritamente voltada para a melhoria do processo, com foco em automatização e otimização do dia a dia.</li>
+                    <li><strong>Aprovação da Gestão:</strong> A proposta precisa ser avaliada e efetivamente aprovada pela gestão responsável.</li>
+                    <li><strong>Implementação na Operação:</strong> A ideia deve ser implementada na operação e colocada em uso real no processo da empresa.</li>
+                </ul>
+                <div class="info-highlight">
+                    <i class="fas fa-rocket"></i>
+                    Pense fora da caixa e nos ajude a transformar a On Time Log!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="sp-footer">
+        <div class="footer-slogan"><p>Conectando pessoas, compartilhando conhecimento e fortalecendo nossa cultura.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giro On Time - On Time Log</title>
+    <link rel="icon" href="logo-topo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="sp-header">
+        <div class="logo-title">
+            <img src="logo-topo.png" alt="On Time Log Logo" class="logo">
+            <h2 class="site-title">Conecta</h2>
+        </div>
+    </header>
+
+    <nav class="sp-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="treinamentos.html">Treinamentos</a></li>
+            <li><a href="agenda.html">Agenda & Ações</a></li>
+            <li><a href="comunicacao.html" target="_blank">Comunicação & Formulários</a></li>
+        </ul>
+    </nav>
+
+    <main class="sp-main giro-main">
+        <section class="giro-intro">
+            <h2>Giro On Time</h2>
+            <p>Acompanhe os registros dos treinamentos, aniversários, campanhas, conquistas, e os momentos que fortalecem a nossa cultura.</p>
+        </section>
+
+        <section class="social-cta">
+            <div class="social-cta-content">
+                <div class="social-text">
+                    <h3>📸 Tirou uma foto legal na empresa?</h3>
+                    <p>Poste no seu Instagram ou LinkedIn e marque a gente! Use a hashtag <strong>#GiroOnTime</strong> e faça parte da nossa galeria de cultura.</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/ontime_log/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/ontime-log%C3%ADstica/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Todos os Momentos</button>
+                <button class="filter-btn" data-filter="evento">Eventos e Campanhas</button>
+                <button class="filter-btn" data-filter="curso">Capacitações</button>
+                <button class="filter-btn" data-filter="confra">Confraternização</button>
+            </div>
+
+            <!-- CARROSSEL AUTOMÁTICO DESLIZANTE -->
+            <div id="autoCarousel" class="carousel-container active">
+                <div id="carouselTrack"></div>
+            </div>
+
+            <!-- GRADE COM FOTOS EM .JPG -->
+            <div id="mainGalleryGrid" class="gallery-grid">
+                
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-1.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Celebrações Especiais</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-2.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Momentos que marcam nossa história</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-3.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Fortalecendo nossa cultura</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-4.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Celebrações Especiais</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-5.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Equipe unida</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-6.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Fortalecendo nossa cultura e união</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-7.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Fortalecendo nossa cultura e união</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-8.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Juntos somos mais fortes</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-9.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Juntos somos mais fortes</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-10.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Registrando momentos inesquecíveis</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-11.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Equipe On Time Log</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-12.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Celebrando com alegria</p></div></div>
+                <div class="gallery-item evento" onclick="openLightbox(this)"><img src="evento-13.jpg" alt="Evento"><div class="gallery-overlay"><p>Eventos - Celebrando com alegria</p></div></div>
+                
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-1.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Aprendizado Contínuo</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-2.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Aprendizado Contínuo</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-3.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Turma focada</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-4.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Compartilhando conhecimento</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-5.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Investindo na equipe</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-6.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência em foco</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-7.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Preparando para o futuro</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-8.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Novos conhecimentos</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-9.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Novas habilidades</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-10.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Nossa equipe crescendo</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-11.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência sempre</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-12.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência sempre</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-13.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência sempre</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-14.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência sempre</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-15.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência sempre</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-16.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência sempre</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-17.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência sempre</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-18.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência sempre</p></div></div>
+                <div class="gallery-item curso" onclick="openLightbox(this)"><img src="curso-19.jpg" alt="Capacitação"><div class="gallery-overlay"><p>Capacitações - Excelência sempre</p></div></div>
+
+                <div class="gallery-item confra" onclick="openLightbox(this)"><img src="confra-1.jpg" alt="Confraternização"><div class="gallery-overlay"><p>Confraternização - Fechando ciclos</p></div></div>
+                <div class="gallery-item confra" onclick="openLightbox(this)"><img src="confra-2.jpg" alt="Confraternização"><div class="gallery-overlay"><p>Confraternização - Alegria e descontração</p></div></div>
+                <div class="gallery-item confra" onclick="openLightbox(this)"><img src="confra-3.jpg" alt="Confraternização"><div class="gallery-overlay"><p>Confraternização - Celebrando juntos</p></div></div>
+                <div class="gallery-item confra" onclick="openLightbox(this)"><img src="confra-4.jpg" alt="Confraternização"><div class="gallery-overlay"><p>Confraternização - Muito obrigado a todos!</p></div></div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="lightboxOverlay" class="lightbox-overlay" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <i class="fas fa-chevron-left lightbox-nav lightbox-prev" onclick="prevImage(event)"></i>
+        <div class="lightbox-content-wrapper">
+            <img id="lightboxImage" src="" alt="Imagem expandida">
+            <p id="lightboxCaption"></p>
+        </div>
+        <i class="fas fa-chevron-right lightbox-nav lightbox-next" onclick="nextImage(event)"></i>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

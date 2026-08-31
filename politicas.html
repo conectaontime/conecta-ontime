@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas e Normas - On Time Log</title>
+    <link rel="icon" href="logo-topo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="sp-header">
+        <div class="logo-title">
+            <img src="logo-topo.png" alt="On Time Log Logo" class="logo">
+            <h2 class="site-title">Conecta</h2>
+        </div>
+    </header>
+
+    <nav class="sp-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="treinamentos.html">Trilha de Desenvolvimento</a></li>
+            <li><a href="agenda.html">Agenda & Ações</a></li>
+            <li><a href="comunicacao.html" target="_blank">Comunicação & Formulários</a></li>
+        </ul>
+    </nav>
+
+    <main class="sp-main policies-main">
+        <section class="policies-intro">
+            <h2>Políticas e Normas</h2>
+            <div class="intro-text">
+                <p style="font-weight: 700; font-size: 18px; color: var(--text-main);">Compromisso com a Ética, o Respeito e a Integridade</p>
+                <p>Na On Time, acreditamos que uma empresa sólida é construída por pessoas comprometidas com a ética, o respeito e a responsabilidade.</p>
+                <p>Mais do que regras, nossas políticas representam princípios que orientam a forma como nos relacionamos, tomamos decisões e conduzimos nossas atividades diariamente.</p>
+                <p>Este portal foi desenvolvido para centralizar as principais diretrizes corporativas da empresa, proporcionando fácil acesso às normas que orientam nosso ambiente de trabalho. Aqui, cada colaborador poderá conhecer seus direitos, deveres e responsabilidades, contribuindo para uma cultura organizacional cada vez mais íntegra, transparente, inclusiva e segura.</p>
+                <p>As políticas aqui disponibilizadas aplicam-se a todos os colaboradores, gestores, diretores, estagiários, terceiros e parceiros da On Time. Conhecer e seguir essas diretrizes fortalece nosso compromisso coletivo com um ambiente de trabalho respeitoso, colaborativo e alinhado aos valores da empresa.</p>
+                <p class="highlight-text">Selecione uma das políticas abaixo para acessar o conteúdo completo de cada documento.</p>
+            </div>
+        </section>
+
+        <section class="policies-section">
+            <div class="policies-grid">
+                
+                <div class="policy-card" onclick="openPolicyModal('diversidade')">
+                    <div class="policy-icon-wrapper"><i class="fas fa-users"></i></div>
+                    <h4>Política de Prevenção à Discriminação e Promoção da Diversidade</h4>
+                    <div class="policy-footer"><span>Acesse Aqui <i class="fas fa-arrow-right"></i></span></div>
+                </div>
+
+                <div class="policy-card" onclick="openPolicyModal('assedio')">
+                    <div class="policy-icon-wrapper"><i class="fas fa-user-shield"></i></div>
+                    <h4>Política de Prevenção e Combate ao Assédio Moral e Sexual</h4>
+                    <div class="policy-footer"><span>Acesse Aqui <i class="fas fa-arrow-right"></i></span></div>
+                </div>
+
+                <div class="policy-card" onclick="openPolicyModal('etica')">
+                    <div class="policy-icon-wrapper"><i class="fas fa-balance-scale"></i></div>
+                    <h4>Código de Ética e Conduta Administrativa</h4>
+                    <div class="policy-footer"><span>Acesse Aqui <i class="fas fa-arrow-right"></i></span></div>
+                </div>
+
+                <div class="policy-card" onclick="openPolicyModal('vestimenta')">
+                    <div class="policy-icon-wrapper"><i class="fas fa-tshirt"></i></div>
+                    <h4>Código de Vestimenta e Apresentação Pessoal</h4>
+                    <div class="policy-footer"><span>Acesse Aqui <i class="fas fa-arrow-right"></i></span></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="culture-section">
+            <div class="section-header"><h2>Cultura</h2></div>
+            <div class="culture-cards-container">
+                <div class="culture-card">
+                    <h3>Nossa Missão</h3>
+                    <p>Oferecer soluções logísticas com excelência, eficiência e inovação, criando relações de confiança com clientes, colaboradores e parceiros, sempre pautadas pela ética, responsabilidade, qualidade e respeito às pessoas.</p>
+                </div>
+                <div class="culture-card">
+                    <h3>Nossa Visão</h3>
+                    <p>Ser reconhecida como uma das principais referências em logística e transporte, destacando-se pela excelência operacional, inovação contínua, valorização das pessoas e compromisso com resultados sustentáveis.</p>
+                </div>
+                <div class="culture-card">
+                    <h3>Nossos Valores</h3>
+                    <ul class="values-list">
+                        <li>Ética e transparência em todas as nossas ações.</li>
+                        <li>Respeito às pessoas e valorização da diversidade.</li>
+                        <li>Integridade nas relações internas e externas.</li>
+                        <li>Excelência na prestação de serviços.</li>
+                        <li>Compromisso com resultados e melhoria contínua.</li>
+                        <li>Trabalho em equipe e colaboração.</li>
+                        <li>Segurança e responsabilidade em todas as operações.</li>
+                        <li>Foco no cliente e na qualidade.</li>
+                        <li>Inovação e desenvolvimento constante.</li>
+                        <li>Responsabilidade social e sustentabilidade.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="policies-conclusion">
+            <h3>Nosso Compromisso</h3>
+            <p>Na On Time, acreditamos que cada colaborador é protagonista na construção da cultura organizacional. O cumprimento das políticas, normas e princípios éticos fortalece um ambiente de trabalho baseado na confiança, respeito, colaboração e responsabilidade.</p>
+            <p>Esperamos que todos conheçam, compreendam e pratiquem diariamente as diretrizes apresentadas neste portal, contribuindo para relações profissionais saudáveis, decisões éticas e uma atuação alinhada aos valores da empresa.</p>
+            <p><strong>A ética, o respeito e a integridade são responsabilidades de todos. Juntos, construímos uma On Time cada vez mais forte, segura e preparada para o futuro.</strong></p>
+        </section>
+    </main>
+
+    <div id="policyModal" class="modal-overlay">
+        <div class="modal-box policy-modal-box">
+            <button type="button" class="close-modal" onclick="closePolicyModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header"><h3 id="policyModalTitle">Título da Política</h3></div>
+            <div class="modal-body" id="policyModalContent"></div>
+        </div>
+    </div>
+
+    <footer class="sp-footer">
+        <div class="footer-slogan"><p>Conectando pessoas, compartilhando conhecimento e fortalecendo nossa cultura.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

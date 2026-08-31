@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Time Carreiras - On Time Log</title>
+    <link rel="icon" href="logo-topo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="sp-header">
+        <div class="logo-title">
+            <img src="logo-topo.png" alt="On Time Log Logo" class="logo">
+            <h2 class="site-title">Conecta</h2>
+        </div>
+    </header>
+
+    <nav class="sp-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="treinamentos.html">Trilha de Desenvolvimento</a></li>
+            <li><a href="agenda.html">Agenda & Ações</a></li>
+            <li><a href="comunicacao.html" target="_blank">Comunicação & Formulários</a></li>
+        </ul>
+    </nav>
+
+    <main class="sp-main careers-main">
+        <section class="careers-intro">
+            <h2>Cresça com a On Time</h2>
+            <div class="intro-text">
+                <p>Acreditamos que desenvolver talentos internos é uma das melhores formas de fortalecer nossas equipes e impulsionar o crescimento da On Time. Pensando nisso, reunimos neste espaço todas as oportunidades internas disponíveis para que você possa acompanhar novas vagas e dar mais um passo na sua trajetória profissional.</p>
+                <p>As oportunidades divulgadas neste portal são destinadas exclusivamente aos colaboradores da On Time e seguem o processo seletivo interno da empresa. Todos os candidatos serão avaliados de acordo com os requisitos da vaga e participarão normalmente das etapas do processo seletivo, garantindo transparência, igualdade de oportunidades e uma seleção baseada em competências.</p>
+                <p class="highlight-text">Seu próximo desafio pode começar aqui.</p>
+            </div>
+        </section>
+
+        <section class="attention-box">
+            <div class="attention-icon"><i class="fas fa-handshake"></i></div>
+            <div class="attention-content">
+                <span class="feature-tag" style="background:#bd4a1c;color:#fff;padding:5px 10px;border-radius:4px;font-size:10px;font-weight:800;letter-spacing:1px;">ATENÇÃO</span>
+                <h4>Antes de se candidatar</h4>
+                <p>Para participar de um processo seletivo interno, é importante se atentar aos critérios.</p>
+                <button type="button" class="modal-btn" onclick="openCareersModal()">Continuar lendo <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section class="vacancies-section">
+            <div class="section-header">
+                <h2>Vagas em Aberto</h2>
+                <p>Confira abaixo as oportunidades disponíveis e escolha aquela que mais combina com o seu perfil.<br>Clique em "Candidatar-se" para acessar a descrição completa da vaga e preencher o formulário de inscrição.</p>
+            </div>
+
+            <div class="vacancies-grid">
+                <div class="vacancy-placeholder">
+                    <i class="fas fa-search"></i>
+                    <p>Vagas disponíveis aparecerão aqui.</p>
+                </div>
+            </div>
+
+            <div class="vacancies-footer">
+                <p style="font-weight:600; color:var(--text-main);">Não encontrou uma oportunidade compatível com seu perfil?</p>
+                <p>Acompanhe este portal regularmente. Novas vagas são publicadas conforme surgem oportunidades internas.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="careersModal" class="modal-overlay">
+        <div class="modal-box careers-modal-box">
+            <button type="button" class="close-modal" onclick="closeCareersModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header"><h3 id="careersModalTitle">Seu próximo passo começa aqui!</h3></div>
+            <div class="modal-body" id="careersModalContent">
+                <h4>Antes de se candidatar</h4>
+                <p>A participação no processo seletivo interno é uma excelente oportunidade para ampliar seus conhecimentos, desenvolver novas competências e construir uma trajetória de crescimento dentro da On Time.</p>
+                <p>Para que esse processo aconteça de forma organizada, transparente e justa para todos os colaboradores, é importante observar atentamente os critérios abaixo antes de realizar sua candidatura.</p>
+                
+                <h4>Confira os requisitos da vaga</h4>
+                <p>Antes de se candidatar, leia atentamente todas as informações da oportunidade e certifique-se de que você atende integralmente aos requisitos técnicos, comportamentais e demais qualificações exigidas para a posição divulgada.</p>
+                
+                <h4>Alinhe sua participação com sua liderança</h4>
+                <p>É fundamental comunicar previamente à sua gestão direta o interesse em participar do processo seletivo interno. Essa comunicação garante transparência, fortalece o relacionamento entre as áreas e permite um planejamento adequado durante todo o processo.</p>
+                
+                <h4>Entenda como acontece a movimentação interna</h4>
+                <p>Caso seja aprovado(a), a transferência para a nova área não ocorrerá de forma imediata. A movimentação será realizada somente após o alinhamento entre as lideranças envolvidas e a definição da substituição da posição atualmente ocupada pelo colaborador.</p>
+                
+                <h4>Participe de todas as etapas do processo</h4>
+                <p>Assim como em um processo seletivo externo, todas as vagas internas seguem critérios de avaliação específicos. Os candidatos deverão participar das etapas previstas para cada oportunidade.</p>
+                
+                <h4>Igualdade de oportunidades</h4>
+                <p>Todas as candidaturas serão avaliadas de forma imparcial, considerando exclusivamente os requisitos da vaga, as competências profissionais, o desempenho durante o processo seletivo e o alinhamento ao perfil esperado para a posição.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="sp-footer">
+        <div class="footer-slogan"><p>Conectando pessoas, compartilhando conhecimento e fortalecendo nossa cultura.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
