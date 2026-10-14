@@ -1,94 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunicação - On Time Log</title>
-    <link rel="icon" href="logo-topo.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunicação Interna - Conecta</title>
+  
+  <!-- Referência para o seu arquivo CSS -->
+  <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <header class="sp-header">
-        <div class="logo-title">
-            <img src="logo-topo.png" alt="On Time Log Logo" class="logo">
-            <h2 class="site-title">Conecta</h2>
+
+  <div class="container">
+    <div class="header-secao">
+      <h2>Comunicação Interna</h2>
+      <p>Acesse os canais, comunicados e informativos da empresa.</p>
+    </div>
+
+    <!-- Grid de Cards de Comunicação -->
+    <div class="cards-grid">
+      
+      <!-- Card de Comunicados e Flyers (Com Proteção por Senha) -->
+      <div class="card-comunicado" onclick="abrirModalSenha()">
+        <div class="card-icon">📢</div>
+        <div class="card-texto">
+          <h3>Comunicados e Flyers</h3>
+          <p>Veja nossas atualizações de comunicados, campanhas e informativos gerais.</p>
         </div>
-    </header>
+      </div>
 
-    <nav class="sp-nav">
-        <ul class="nav-links">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="treinamentos.html">Trilha de Desenvolvimento</a></li>
-            <li><a href="agenda.html">Agenda & Ações</a></li>
-            <li><a href="comunicacao.html" class="active">Comunicação & Formulários</a></li>
-        </ul>
-    </nav>
+    </div>
+  </div>
 
-    <main class="sp-main comms-main">
-        <section class="section-header">
-            <h2>Comunicação e Formulários</h2>
-            <p>Acesse documentos importantes, entre em contato e envie suas sugestões.</p>
-        </section>
+  <!-- Modal / Pop-up de Proteção por Senha -->
+  <div id="modalSenha" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" onclick="fecharModal()">&times;</span>
+      
+      <!-- Tela de Digitação da Senha -->
+      <div id="areaLogin">
+        <h3>Acesso Restrito</h3>
+        <p>Insira a senha para visualizar os comunicados.</p>
+        <input type="password" id="senhaInput" placeholder="Digite a senha..." onkeypress="verificarEnter(event)">
+        <button onclick="verificarSenha()" class="btn-acessar">Acessar</button>
+        <p id="erroSenha" class="erro-texto">Senha incorreta. Tente novamente.</p>
+      </div>
 
-        <div class="comms-alert">
-            <i class="fas fa-bell"></i>
-            <div class="comms-alert-text">
-                <h3>Fique por dentro!</h3>
-                <p>Acompanhe sempre os comunicados oficiais e informativos disparados no <strong>E-mail Corporativo</strong> e no <strong>WhatsApp do RH</strong>.</p>
-            </div>
+      <!-- Área de Conteúdo dos Comunicados (Exibida após senha correta) -->
+      <div id="areaConteudo" style="display: none;">
+        <h3>Atualizações e Flyers</h3>
+        <div class="galeria-flyers">
+          <!-- Substitua o src pelos caminhos reais das suas imagens/flyers na pasta assets/images -->
+          <img src="assets/images/comunicado1.jpg" alt="Comunicado 1" class="flyer-img">
+          <img src="assets/images/comunicado2.jpg" alt="Comunicado 2" class="flyer-img">
         </div>
+      </div>
+    </div>
+  </div>
 
-        <section class="comms-section">
-            <div class="forms-grid">
-                <a href="#" class="form-card">
-                    <i class="fas fa-file-word form-icon"></i>
-                    <div class="form-info">
-                        <h3>Inclusão de Dependentes</h3>
-                        <p>Convênio Médico 2026</p>
-                    </div>
-                </a>
-                <a href="#" class="form-card">
-                    <i class="fas fa-file-pdf form-icon pdf-icon"></i>
-                    <div class="form-info">
-                        <h3>Solicitação de Benefício</h3>
-                        <p>Opção Vale Transporte</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="section-header">
-            <h2>Central de Contatos</h2>
-        </section>   
-        <div class="contacts-wrapper">
-            <div class="contact-box">
-                <div class="contact-group">
-                    <p><i class="fas fa-envelope"></i> <strong>RH:</strong> <a href="mailto:rh@ontimelogistica.com.br">rh@ontimelogistica.com.br</a></p>
-                    <p><i class="fas fa-envelope"></i> <strong>Ouvidoria:</strong> <a href="mailto:sac@ontimelogistica.com.br">sac@ontimelogistica.com.br</a></p>
-                    <p><i class="fas fa-envelope"></i> <strong>Facilities:</strong> <a href="mailto:facilities@ontimelogistica.com.br">facilities@ontimelogistica.com.br</a></p>
-                </div>
-                <div class="contact-group whatsapp-group">
-                    <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp RH:</strong> 11 99451-3877</p>
-                    <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp Facilities:</strong> 11 99387-9474</p>
-                </div>
-            </div>
-            
-            <div class="suggestion-box">
-                <img src="caixa-sugestoes.png" alt="Caixinha de Sugestões" class="suggestion-image">
-                <div class="suggestion-text">
-                    <h2>VOCÊ SABIA?</h2>
-                    <p>Pensando em fortalecer nosso ambiente de trabalho, disponibilizamos uma <strong>Caixinha de Sugestões e Reclamações Anônimas</strong>, localizada no <strong>9º andar</strong>.</p>
-                    <p>Este é um espaço seguro para compartilhar <strong>sugestões, elogios, críticas ou oportunidades de melhoria</strong> de forma <strong>anônima</strong>. Sua participação é importante para construirmos, juntos, um ambiente cada vez melhor.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="sp-footer">
-        <div class="footer-slogan"><p>Conectando pessoas, compartilhando conhecimento e fortalecendo nossa cultura.</p></div>
-    </footer>
-    <script src="script.js"></script>
+  <!-- Referência para o seu arquivo JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
