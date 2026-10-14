@@ -76,7 +76,7 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 .info-highlight { background-color: #fff3eb; color: #bd4a1c; padding: 15px 20px; border-radius: 8px; border-left: 4px solid var(--orange-accent); font-weight: 600; display: flex; align-items: center; gap: 15px; margin-top: 25px; font-size: 14px;}
 .info-highlight i { font-size: 24px; }
 
-/* COMUNICAÇÃO E CONTATOS (CORRIGIDO ESPAÇAMENTO DA CAIXA DE CONTATOS) */
+/* COMUNICAÇÃO E CONTATOS */
 .comms-alert { background-color: #e6f4ea; border-left: 5px solid #1e8e3e; padding: 25px 30px; border-radius: 12px; display: flex; align-items: center; gap: 20px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
 .comms-alert i { font-size: 35px; color: #1e8e3e; }
 .comms-alert-text h3 { font-size: 18px; color: var(--text-main); margin-bottom: 5px; font-weight: 700; }
@@ -90,7 +90,6 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 .form-info h3 { font-size: 15px; color: var(--text-main); margin-bottom: 4px; font-weight: 600;}
 .form-info p { font-size: 13px; color: var(--text-muted); margin-bottom: 0;}
 
-/* Ajuste de align-items para não esticar a caixa e criar espaços */
 .contacts-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; margin-top: 30px;}
 .contact-box { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.03); border: 1px solid #f3f2f1; display: flex; flex-direction: column; justify-content: flex-start;}
 .contact-details p { font-size: 14px; color: var(--text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
@@ -286,41 +285,67 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 .careers-modal-box .modal-body h4:first-child, .policy-modal-box .modal-body h4:first-child { margin-top: 0; }
 
 /* =========================================
-   NOVO: CARD DE COMUNICADOS E POP-UP DE SENHA
+   NOVO: BLOCO DE DESTAQUE E POP-UP DE SENHA
    ========================================= */
-.card-comunicado {
+
+/* Bloco grande de destaque */
+.destaque-comunicados {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background: var(--white);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.03);
-    border: 1px solid #f3f2f1;
+    border-radius: 12px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--orange-accent);
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 320px;
-    gap: 15px;
+    width: 100%;
 }
-.card-comunicado:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    border-color: var(--orange-accent);
+.destaque-comunicados:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.15);
 }
-.card-icon {
-    font-size: 30px;
+.destaque-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.destaque-icon {
+    font-size: 45px;
     color: var(--orange-accent);
+    background: #fff3eb;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
-.card-texto h3 {
-    margin: 0 0 4px 0;
-    font-size: 15px;
-    color: var(--text-main);
-    font-weight: 600;
+.destaque-texto h3 {
+    margin: 0 0 5px 0;
+    font-size: 22px;
+    color: var(--header-footer-bg);
+    font-weight: 800;
 }
-.card-texto p {
+.destaque-texto p {
     margin: 0;
     color: var(--text-muted);
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.destaque-action {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--orange-accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+.destaque-comunicados:hover .destaque-action {
+    color: var(--header-footer-bg);
 }
 
 /* Modal e Pop-up exclusivo de Senha */
