@@ -383,3 +383,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// =========================================
+// NOVA LÓGICA: CAIXA DE COMUNICADOS (SENHA)
+// =========================================
+
+window.abrirModalSenha = function() {
+    const modal = document.getElementById("modalSenha");
+    if(modal) {
+        modal.style.display = "block";
+        document.getElementById("senhaInput").value = "";
+        document.getElementById("erroSenha").style.display = "none";
+        document.getElementById("areaLogin").style.display = "block";
+        document.getElementById("areaConteudo").style.display = "none";
+        setTimeout(() => document.getElementById("senhaInput").focus(), 100);
+    }
+}
+
+window.fecharModalSenha = function() {
+    const modal = document.getElementById("modalSenha");
+    if(modal) modal.style.display = "none";
+}
+
+window.verificarSenha = function() {
+    const senha = document.getElementById("senhaInput").value;
+    // Senha definida: ontimesp
+    if (senha === "ontimesp") {
+        document.getElementById("areaLogin").style.display = "none";
+        document.getElementById("areaConteudo").style.display = "block";
+    } else {
+        document.getElementById("erroSenha").style.display = "block";
+    }
+}
+
+window.verificarEnter = function(event) {
+    if (event.key === "Enter") {
+        verificarSenha();
+    }
+}
+
+// Fechar o modal de senha ao clicar fora dele
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById("modalSenha");
+    if (event.target === modal) {
+        fecharModalSenha();
+    }
+});
