@@ -284,3 +284,145 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 .careers-modal-box .modal-body, .policy-modal-box .modal-body { max-height: 60vh; overflow-y: auto; padding-right: 15px; }
 .careers-modal-box .modal-body h4, .policy-modal-box .modal-body h4 { font-size: 17px; color: var(--header-footer-bg); margin-top: 25px; margin-bottom: 10px; font-weight: 700; }
 .careers-modal-box .modal-body h4:first-child, .policy-modal-box .modal-body h4:first-child { margin-top: 0; }
+
+/* =========================================
+   NOVO: CARD DE COMUNICADOS E POP-UP DE SENHA
+   ========================================= */
+.card-comunicado {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+    border: 1px solid #f3f2f1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 320px;
+    gap: 15px;
+}
+.card-comunicado:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border-color: var(--orange-accent);
+}
+.card-icon {
+    font-size: 30px;
+    color: var(--orange-accent);
+}
+.card-texto h3 {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+.card-texto p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Modal e Pop-up exclusivo de Senha */
+.password-modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 19, 45, 0.85);
+    backdrop-filter: blur(5px);
+}
+.password-modal-content {
+    background-color: var(--white);
+    margin: 10vh auto;
+    padding: 35px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: relative;
+    text-align: center;
+    animation: fadeInDown 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.password-modal-content .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #a19f9d;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.password-modal-content .close-btn:hover {
+    color: var(--sp-accent-red);
+}
+.password-modal-content h3 {
+    font-size: 22px;
+    color: var(--header-footer-bg);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.password-modal-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+#senhaInput {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s;
+}
+#senhaInput:focus {
+    border-color: var(--orange-accent);
+}
+.btn-acessar {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--header-footer-bg);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-acessar:hover {
+    background-color: var(--orange-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255,102,0,0.3);
+}
+.erro-texto {
+    color: var(--sp-accent-red) !important;
+    font-size: 13px !important;
+    margin-top: 15px !important;
+    display: none;
+    font-weight: 600;
+}
+.galeria-flyers {
+    margin-top: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 10px;
+}
+.galeria-flyers::-webkit-scrollbar { width: 6px; }
+.galeria-flyers::-webkit-scrollbar-track { background: #f3f2f1; border-radius: 4px; }
+.galeria-flyers::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 4px; }
+.flyer-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
