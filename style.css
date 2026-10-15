@@ -348,7 +348,7 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
     color: var(--header-footer-bg);
 }
 
-/* Modal e Pop-up exclusivo de Senha */
+/* Modal e Pop-up exclusivo de Senha (Tamanho Ajustado) */
 .password-modal-overlay {
     display: none; 
     position: fixed;
@@ -362,11 +362,11 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 }
 .password-modal-content {
     background-color: var(--white);
-    margin: 10vh auto;
-    padding: 35px;
+    margin: 5vh auto; /* Margem menor para caber caixas maiores */
+    padding: 40px; /* Mais respiro interno */
     border-radius: 12px;
     width: 90%;
-    max-width: 450px;
+    max-width: 850px; /* Largura grandemente expandida */
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     position: relative;
     text-align: center;
@@ -376,7 +376,7 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 24px;
+    font-size: 28px;
     color: #a19f9d;
     cursor: pointer;
     transition: color 0.2s;
@@ -394,6 +394,10 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
     font-size: 14px;
     color: var(--text-muted);
     margin-bottom: 20px;
+}
+#areaLogin {
+    max-width: 450px; /* Mantém apenas a área de digitação de senha pequena */
+    margin: 0 auto;
 }
 #senhaInput {
     width: 100%;
@@ -434,20 +438,25 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
     display: none;
     font-weight: 600;
 }
+
+/* Área da Galeria de Imagens com maior espaçamento */
 .galeria-flyers {
-    margin-top: 20px;
-    max-height: 60vh;
+    margin-top: 25px;
+    max-height: 70vh; /* Altura máxima estendida para ver as imagens melhor */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding-right: 10px;
+    gap: 40px; /* Distanciamento super visível entre os comunicados */
+    padding-right: 15px;
 }
-.galeria-flyers::-webkit-scrollbar { width: 6px; }
+.galeria-flyers::-webkit-scrollbar { width: 8px; }
 .galeria-flyers::-webkit-scrollbar-track { background: #f3f2f1; border-radius: 4px; }
 .galeria-flyers::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 4px; }
 .flyer-img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 750px; /* Limita a largura da imagem para não distorcer */
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
