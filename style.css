@@ -439,24 +439,84 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
     font-weight: 600;
 }
 
-/* Área da Galeria de Imagens com maior espaçamento */
-.galeria-flyers {
+/* --- Grade do Catálogo --- */
+.comunicados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
     margin-top: 25px;
-    max-height: 70vh; /* Altura máxima estendida para ver as imagens melhor */
+    padding: 10px 0;
+    max-height: 60vh;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px; /* Distanciamento super visível entre os comunicados */
-    padding-right: 15px;
 }
-.galeria-flyers::-webkit-scrollbar { width: 8px; }
-.galeria-flyers::-webkit-scrollbar-track { background: #f3f2f1; border-radius: 4px; }
-.galeria-flyers::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 4px; }
-.flyer-img {
+.comunicados-grid::-webkit-scrollbar { width: 8px; }
+.comunicados-grid::-webkit-scrollbar-track { background: #f3f2f1; border-radius: 4px; }
+.comunicados-grid::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 4px; }
+
+/* Card individual (Miniatura) */
+.comunicado-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.comunicado-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.comunicado-card img {
     width: 100%;
-    max-width: 750px; /* Limita a largura da imagem para não distorcer */
-    margin: 0 auto;
+    height: 140px;
+    object-fit: cover;
     display: block;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.comunicado-card p {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    padding: 10px 5px;
+    margin: 0;
+}
+
+/* --- Modal para Visualizar o Flyer Expandido --- */
+.modal-flyer {
+    display: none;
+    position: fixed;
+    z-index: 10000; /* Acima do modalSenha que tem 9999 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-flyer img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+.fechar-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.fechar-btn:hover {
+    color: var(--orange-accent);
 }
