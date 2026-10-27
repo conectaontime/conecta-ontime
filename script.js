@@ -247,7 +247,6 @@ window.closeCareersModal = function() {
     if(modal) modal.classList.remove('active');
 }
 
-/* Nova função do Modal de Ideias (Programa de Engajamento) */
 window.openIdeaModal = function() {
     const modal = document.getElementById('ideaModal');
     if(modal) modal.classList.add('active');
@@ -364,7 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fechar modais ao clicar fora
     const modals = [
         { id: 'courseModal', closeFn: closeModal },
         { id: 'policyModal', closeFn: closePolicyModal },
@@ -385,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // =========================================
-// NOVA LÓGICA: CAIXA DE COMUNICADOS (SENHA)
+// CAIXA DE COMUNICADOS (SENHA)
 // =========================================
 
 window.abrirModalSenha = function() {
@@ -407,7 +405,6 @@ window.fecharModalSenha = function() {
 
 window.verificarSenha = function() {
     const senha = document.getElementById("senhaInput").value;
-    // Senha definida: ontimesp
     if (senha === "ontimesp") {
         document.getElementById("areaLogin").style.display = "none";
         document.getElementById("areaConteudo").style.display = "block";
@@ -422,7 +419,6 @@ window.verificarEnter = function(event) {
     }
 }
 
-// Fechar o modal de senha ao clicar fora dele
 document.addEventListener('click', function(event) {
     const modal = document.getElementById("modalSenha");
     if (event.target === modal) {
@@ -431,7 +427,7 @@ document.addEventListener('click', function(event) {
 });
 
 // =========================================
-// LÓGICA DO FLYER EXPANDIDO
+// FLYER EXPANDIDO
 // =========================================
 
 window.abrirFlyer = function(caminhoImagem) {
