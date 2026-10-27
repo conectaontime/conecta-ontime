@@ -121,34 +121,18 @@
                 <p id="erroSenha" class="erro-texto">Senha incorreta. Tente novamente.</p>
             </div>
 
-           <!-- === CATÁLOGO DE COMUNICADOS (MINIATURAS) === -->
-<div class="comunicados-grid">
-
-  <!-- COMUNICADO 1 (Altere o caminho da imagem e o título) -->
-  <div class="comunicado-card" onclick="abrirFlyer('imagens/outubro-rosa.jpg')">
-    <img src="imagens/outubro-rosa.jpg" alt="Outubro Rosa">
-    <p>Outubro Rosa</p>
-  </div>
-
-  <!-- COMUNICADO 2 -->
-  <div class="comunicado-card" onclick="abrirFlyer('imagens/outro-comunicado.jpg')">
-    <img src="imagens/outro-comunicado.jpg" alt="Comunicado 2">
-    <p>Nome do Comunicado 2</p>
-  </div>
-
-  <!-- COMUNICADO 3 (Para adicionar mais, basta duplicar o bloco acima) -->
-  <div class="comunicado-card" onclick="abrirFlyer('imagens/terceiro-comunicado.jpg')">
-    <img src="imagens/terceiro-comunicado.jpg" alt="Comunicado 3">
-    <p>Nome do Comunicado 3</p>
-  </div>
-
-</div>
-
-<!-- === MODAL / TELA CHEIA AO CLICAR EM UM FLYER === -->
-<div id="modalFlyer" class="modal-flyer" onclick="fecharFlyer()">
-  <span class="fechar-btn">&times;</span>
-  <img id="imgExpandida" src="" alt="Comunicado Expandido">
-</div>
+            <!-- Conteúdo Liberado -->
+            <div id="areaConteudo" style="display: none;">
+                <h3>Atualizações e Informes</h3>
+                <div class="galeria-flyers">
+                    <!-- Estes são os ficheiros que tem de alojar no seu projeto para que as imagens apareçam -->
+                    <img src="comunicado-geral-01.png" alt="Comunicado 1" class="flyer-img">
+                    <img src="comunicado-geral-02.png" alt="Comunicado 2" class="flyer-img">
+                    <img src="comunicado-geral-03.png" alt="Comunicado 3" class="flyer-img">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
