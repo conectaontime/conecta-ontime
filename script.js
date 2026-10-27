@@ -429,3 +429,20 @@ document.addEventListener('click', function(event) {
         fecharModalSenha();
     }
 });
+
+// =========================================
+// LÓGICA DO FLYER EXPANDIDO
+// =========================================
+
+window.abrirFlyer = function(caminhoImagem) {
+    const modal = document.getElementById('modalFlyer');
+    const imgExpandida = document.getElementById('imgExpandida');
+    
+    imgExpandida.src = caminhoImagem;
+    modal.style.display = 'flex';
+}
+
+window.fecharFlyer = function() {
+    const modal = document.getElementById('modalFlyer');
+    if(modal) modal.style.display = 'none';
+}
