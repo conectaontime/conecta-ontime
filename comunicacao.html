@@ -124,14 +124,30 @@
             <!-- Conteúdo Liberado -->
             <div id="areaConteudo" style="display: none;">
                 <h3>Atualizações e Informes</h3>
-                <div class="galeria-flyers">
-                    <!-- Estes são os ficheiros que tem de alojar no seu projeto para que as imagens apareçam -->
-                    <img src="comunicado-geral-01.png" alt="Comunicado 1" class="flyer-img">
-                    <img src="comunicado-geral-02.png" alt="Comunicado 2" class="flyer-img">
-                    <img src="comunicado-geral-03.png" alt="Comunicado 3" class="flyer-img">
+                
+                <!-- CATÁLOGO DE COMUNICADOS (MINIATURAS FIXAS) -->
+                <div class="comunicados-grid">
+                    <div class="comunicado-card" onclick="abrirFlyer('comunicado-geral-01.png')">
+                        <img src="comunicado-geral-01.png" alt="Comunicado 1">
+                        <p>Comunicado 1</p>
+                    </div>
+                    <div class="comunicado-card" onclick="abrirFlyer('comunicado-geral-02.png')">
+                        <img src="comunicado-geral-02.png" alt="Comunicado 2">
+                        <p>Comunicado 2</p>
+                    </div>
+                    <div class="comunicado-card" onclick="abrirFlyer('comunicado-geral-03.png')">
+                        <img src="comunicado-geral-03.png" alt="Comunicado 3">
+                        <p>Comunicado 3</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- === MODAL / TELA CHEIA AO CLICAR EM UM FLYER === -->
+    <div id="modalFlyer" class="modal-flyer" onclick="fecharFlyer()">
+        <span class="fechar-btn">&times;</span>
+        <img id="imgExpandida" src="" alt="Comunicado Expandido">
     </div>
 
     <script src="script.js"></script>
