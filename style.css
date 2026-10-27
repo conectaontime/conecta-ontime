@@ -285,10 +285,9 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 .careers-modal-box .modal-body h4:first-child, .policy-modal-box .modal-body h4:first-child { margin-top: 0; }
 
 /* =========================================
-   NOVO: BLOCO DE DESTAQUE E POP-UP DE SENHA
+   BLOCO DE DESTAQUE E POP-UP DE SENHA
    ========================================= */
 
-/* Bloco grande de destaque */
 .destaque-comunicados {
     display: flex;
     align-items: center;
@@ -348,7 +347,6 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
     color: var(--header-footer-bg);
 }
 
-/* Modal e Pop-up exclusivo de Senha (Tamanho Ajustado) */
 .password-modal-overlay {
     display: none; 
     position: fixed;
@@ -362,15 +360,14 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 }
 .password-modal-content {
     background-color: var(--white);
-    margin: 5vh auto; /* Margem menor para caber caixas maiores */
-    padding: 40px; /* Mais respiro interno */
+    margin: 5vh auto;
+    padding: 40px;
     border-radius: 12px;
     width: 90%;
-    max-width: 850px; /* Largura grandemente expandida */
+    max-width: 850px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     position: relative;
     text-align: center;
-    animation: fadeInDown 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .password-modal-content .close-btn {
     position: absolute;
@@ -396,7 +393,7 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
     margin-bottom: 20px;
 }
 #areaLogin {
-    max-width: 450px; /* Mantém apenas a área de digitação de senha pequena */
+    max-width: 450px;
     margin: 0 auto;
 }
 #senhaInput {
@@ -439,11 +436,15 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
     font-weight: 600;
 }
 
-/* --- Grade do Catálogo --- */
+/* =========================================
+   NOVO: GRADE DO CATÁLOGO E MINIATURAS
+   ========================================= */
+
 .comunicados-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Mantém os itens centralizados */
+    gap: 20px;
     margin-top: 25px;
     padding: 10px 0;
     max-height: 60vh;
@@ -453,8 +454,10 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 .comunicados-grid::-webkit-scrollbar-track { background: #f3f2f1; border-radius: 4px; }
 .comunicados-grid::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 4px; }
 
-/* Card individual (Miniatura) */
+/* Card individual rigorosamente bloqueado */
 .comunicado-card {
+    flex: 0 0 150px; /* Impede esticamento automático */
+    max-width: 150px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
@@ -470,10 +473,11 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 }
 
 .comunicado-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover !important;
     display: block;
+    margin: 0 auto;
 }
 
 .comunicado-card p {
@@ -484,11 +488,11 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
     margin: 0;
 }
 
-/* --- Modal para Visualizar o Flyer Expandido --- */
+/* Modal para Visualizar o Flyer Expandido */
 .modal-flyer {
     display: none;
     position: fixed;
-    z-index: 10000; /* Acima do modalSenha que tem 9999 */
+    z-index: 10000;
     left: 0;
     top: 0;
     width: 100%;
