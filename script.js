@@ -263,16 +263,33 @@ window.closeIdeaModal = function() {
 let currentItems = [];
 let currentIndex = 0;
 
-window.openLightbox = function(element) {
+// Função original renomeada internamente
+const originalOpenLightbox = function(element) {
     currentItems = Array.from(document.querySelectorAll('.gallery-item:not(.hide)'));
     currentIndex = currentItems.indexOf(element);
     updateLightboxContent();
     document.getElementById('lightboxOverlay').classList.add('active');
 }
 
+window.openLightbox = function(element) {
+    // Garante que as setas estão visíveis ao abrir pela galeria
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    if(prevBtn) prevBtn.style.display = 'block';
+    if(nextBtn) nextBtn.style.display = 'block';
+    
+    originalOpenLightbox(element);
+}
+
 window.closeLightbox = function(e) {
     if (e && (e.target.tagName === 'IMG' || e.target.classList.contains('lightbox-nav') || e.target.tagName === 'P')) return; 
     document.getElementById('lightboxOverlay').classList.remove('active');
+    
+    // Reinicia o carrossel ao fechar a lightbox, se estiver na aba Todos os Momentos
+    const autoCarousel = document.getElementById('autoCarousel');
+    if(autoCarousel && autoCarousel.style.display !== 'none' && document.getElementById('lightboxOverlay').classList.contains('active') === false) {
+        startCarousel();
+    }
 }
 
 window.nextImage = function(e) {
@@ -315,6 +332,26 @@ function startCarousel() {
     }, 5000);
 }
 
+// NOVA FUNÇÃO: Abrir Lightbox a partir do Carrossel
+window.openLightboxFromCarousel = function(slideElement) {
+    const imgSrc = slideElement.querySelector('img').src;
+    const caption = slideElement.querySelector('.carousel-caption').innerText;
+    
+    document.getElementById('lightboxImage').src = imgSrc;
+    document.getElementById('lightboxCaption').innerText = caption;
+    
+    // Esconde as setas de navegação pois abrimos uma imagem isolada do carrossel
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    if(prevBtn) prevBtn.style.display = 'none';
+    if(nextBtn) nextBtn.style.display = 'none';
+    
+    document.getElementById('lightboxOverlay').classList.add('active');
+    
+    // Pausa o carrossel enquanto a imagem está aberta
+    clearInterval(slideTimer);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     
     const galleryItems = document.querySelectorAll('.gallery-item');
@@ -326,7 +363,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const caption = item.querySelector('p').innerText;
             const slide = document.createElement('div');
             slide.className = 'carousel-slide';
-            slide.innerHTML = `<img src="${imgSrc}" alt="On Time"><div class="carousel-caption">${caption}</div>`;
+            // ADICIONADO: onclick
+            slide.innerHTML = `<img src="${imgSrc}" alt="On Time" onclick="openLightboxFromCarousel(this.parentElement)"><div class="carousel-caption">${caption}</div>`;
             carouselTrack.appendChild(slide);
         });
         startCarousel();
