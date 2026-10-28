@@ -103,7 +103,7 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 .suggestion-text h2 { font-size: 20px; color: var(--header-footer-bg); margin-bottom: 12px; font-weight: 800; }
 .suggestion-text p { font-size: 14px; color: var(--text-main); line-height: 1.6; margin-bottom: 0;}
 
-/* GIRO ON TIME (CARROSSEL DESLIZANTE) */
+/* GIRO ON TIME E CARROSSEL */
 .social-cta { margin-bottom: 40px; }
 .social-cta-content { background: linear-gradient(135deg, #1D132D 0%, #3a265a 100%); border-radius: 12px; padding: 30px 40px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 8px 20px rgba(29, 19, 45, 0.15); color: var(--white); }
 .social-text h3 { font-size: 20px; margin-bottom: 8px; font-weight: 700; color: var(--orange-accent); }
@@ -117,32 +117,35 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 .filter-btn:hover { border-color: var(--orange-accent); color: var(--orange-accent); }
 .filter-btn.active { background: var(--orange-accent); border-color: var(--orange-accent); color: var(--white); box-shadow: 0 4px 10px rgba(255, 102, 0, 0.2); }
 
-/* === CARROSSEL EXPANDIDO E IMAGENS INTEIRAS === */
+/* === CARROSSEL FIXO E ISOLADO === */
 .carousel-container { 
     display: none; 
     width: 100%; 
     max-width: 1000px; 
-    height: 700px; /* Bem grande para caber flyers verticais ou horizontais */
+    height: 600px; 
     margin: 0 auto 40px auto; 
     position: relative; 
     overflow: hidden; 
     border-radius: 16px; 
     box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
-    background: #ffffff; /* Fundo branco para misturar com flyers do Canva */
+    background: #f3f2f1; /* Fundo cinza clarinho para separar imagens brancas da lateral */
 }
 .carousel-container.active { display: block; }
 
 #carouselTrack { 
     display: flex; 
+    flex-wrap: nowrap; /* Trava o carrossel em linha única */
     transition: transform 0.6s ease-in-out; 
     height: 100%; 
     width: 100%; 
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-slide { 
-    min-width: 100%; 
+    flex: 0 0 100%; /* EXIGÊNCIA: O slide terá exatos 100% da tela, sem emendar fotos */
+    width: 100%; 
     height: 100%; 
-    flex-shrink: 0; 
     position: relative; 
     cursor: pointer; 
     display: flex; 
@@ -151,10 +154,13 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 }
 
 .carousel-slide img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: contain !important; /* FORÇA a mostrar a imagem toda, sem cortar as pontas */
+    max-width: 100%; 
+    max-height: 100%; 
+    width: auto;
+    height: auto;
+    object-fit: contain !important; /* Mostra a imagem toda sem engolir as bordas */
     display: block; 
+    margin: auto;
 }
 
 .carousel-caption { 
@@ -174,31 +180,17 @@ body { background-color: var(--background); color: var(--text-main); overflow-x:
 
 .gallery-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
 .gallery-grid.active { display: grid; }
-
-/* === AJUSTE NA GRADE (QUADRADOS) PARA NÃO CORTAR NADA === */
-.gallery-item { 
-    position: relative; 
-    border-radius: 10px; 
-    overflow: hidden; 
-    cursor: pointer; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-    transition: transform 0.3s ease; 
-    aspect-ratio: 4/3; 
-    background: #ffffff; /* Fundo branco para misturar bordas */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.gallery-item { position: relative; border-radius: 10px; overflow: hidden; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s ease; aspect-ratio: 4/3; background: #ffffff; display: flex; align-items: center; justify-content: center;}
 .gallery-item.hide { display: none; }
 .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
 
 .gallery-item img { 
     width: 100%; 
     height: 100%; 
-    object-fit: contain !important; /* Força a miniatura a mostrar o flyer todo também */
+    object-fit: contain !important; 
     display: block; 
     transition: transform 0.5s ease; 
-    padding: 5px; /* Uma margem minúscula para a imagem não colar nas bordas do quadrado */
+    padding: 5px; 
 }
 .gallery-item:hover img { transform: scale(1.03); }
 
